@@ -1,0 +1,36 @@
+function listenForClicks() {
+	document.addEventListener("click", (e) => {
+
+    /**
+     * Insert the page-hiding CSS into the active tab,
+     * then get the beast URL and
+     * send a "beastify" message to the content script in the active tab.
+     */
+    function startCheck(tabs) {
+      document.querySelector("#infoAds").classList.remove("hidden");
+      document.querySelector("#infoAds").classList.add("show");
+
+	// browser.tabs.sendMessage(tabs[0].id, {
+	//  command: "doCheckAds",
+	//  });
+
+      browser.storage.local.get(['totalInfo'])
+      .then ((result) => {
+        console.log(result);
+      });
+
+    }
+
+    if (e.target.classList.contains("checkinfo")) {
+      browser.tabs.query({active: true, currentWindow: true})
+      .then(startCheck);
+    }
+
+
+  });
+}
+
+
+browser.tabs.executeScript({file: "checkads.js"})
+.then(listenForClicks);
+

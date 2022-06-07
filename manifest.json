@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "Check Ads",
+  "version": "1.21",
+
+  "description": "Information about Facebook advertising billing",
+
+  "icons": {
+    "64": "icons/meta.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["/checkads.js","/js/jquery-3.4.1.min.js"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab", "webRequest", "<all_urls>", "tabs", "storage"
+  ],
+
+  "browser_action":{
+    "browser_style": true,
+    "default_title": "Check Ads",
+    "default_popup": "/popup.html"
+  }
+
+}

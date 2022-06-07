@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Check Ads</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+.content-fx,.content-info{display:block;margin:15px}.content-info>table{display:initial}.loading{width:30px}.hidden{display:none}.show{display: initial;}.resetinfo{margin: 10px 0 0 15px;}
+</style>
+<body>
+<div class="main" style="">
+	<div class="content-fx">
+		<form action="">
+		<div class="form-group text-center">
+			<div>
+				<button id="cinfo" type="button" class="btn btn-primary checkinfo" onclick="cinfo();">Check Info</button>
+				<button type="button" class="btn btn-primary shareacc">Share Acc</button>
+				<button type="button" class="btn btn-primary gettoken">Get Token</button>
+			</div>
+		</div>
+		</form>
+	</div>
+	<div id="infoAds" class="content-info hidden">
+	<!-- <div id="infoAds" class="content-info text-center"> -->
+		<table class="table">
+		<thead>
+		  <tr>
+		    <th>Id</th><th>Name Account</th>
+		    <th>Status</th><th>Timezone</th><th>Bill Date</th>
+		    <th>Ngưỡng</th><th>Limit</th>
+		    <th>Số dư</th><th>Loại tiền</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr id="sTable"></tr>
+		</tbody>
+		</table>
+		<div><button type="button" class="btn btn-warning resetinfo">Reset</button></div>
+	</div>
+
+	
+</div>
+<script src="popup.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+function cinfo(){
+	$('#infoAds').show();
+}
+</script>
+</body>
+<!-- Copy right 2022 by Adam Baylin -->
+</html>
