@@ -69,7 +69,11 @@ async function generalInfo(){
         for (var key in info1) {
             for (var idads in info1[key]){
                 var [nameacc, status, utc, datebill, limit, money] = info1[key][idads];
-                var [currency,balance] = info2[key][idads];
+                try {
+                    var [currency,balance] = info2[key][idads];
+                } catch (error) {
+                    var [currency,balance] = [0,0];
+                }
 
         totalInfo.push([idads, nameacc, status, utc, datebill, currency, limit, balance, money]);
       }
@@ -172,6 +176,6 @@ async function getInfoAds(number, lsAccId, tokenS, infoAds){
 
 function pause() {
   return new Promise(function(resolve, reject) {
-    setTimeout(resolve, 3000);
+    setTimeout(resolve, 1500);
   });
 }

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <style>
-.content-fx,.content-info{display:block;margin:15px}.content-info>table{display:initial}.loading{width:30px}.hidden{display:none}.show{display: initial;}.resetinfo{margin: 10px 0 0 15px;}
+.content-fx,.content-info{display:block;margin:15px}.content-info>table{display:initial}.loading{width:30px;margin:15px;display: block;}.hidden{display:none}.show{display: initial;}.resetinfo{margin: 10px 0 0 15px;}
 </style>
 <body>
 <div class="main" style="">
@@ -23,7 +23,6 @@
 		</form>
 	</div>
 	<div id="infoAds" class="content-info hidden">
-	<!-- <div id="infoAds" class="content-info text-center"> -->
 		<table class="table">
 		<thead>
 		  <tr>
@@ -37,6 +36,7 @@
 		  <tr id="sTable"></tr>
 		</tbody>
 		</table>
+		<img id="loading" class="loading" src="/img/loading.gif" alt="">
 		<div><button type="button" class="btn btn-warning resetinfo">Reset</button></div>
 	</div>
 
@@ -44,11 +44,7 @@
 </div>
 <script src="popup.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-function cinfo(){
-	$('#infoAds').show();
-}
-</script>
+
 </body>
 <!-- Copy right 2022 by Adam Baylin -->
 </html>
